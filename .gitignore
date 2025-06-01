@@ -1,0 +1,45 @@
+# Salesforce cache
+.sfdx/
+.sf/
+.local/
+.forceignore
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# Misc
+node_modules/
+.idea/
+.DS_Store
+
+# Package directories
+target/
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Cache directories
+.npm
+.eslintcache
+
+# Coverage directory
+coverage/
+
+# Environment variables
+.env 

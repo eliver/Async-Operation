@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AsyncOperation</fullName>
+    <types>
+        <members>AsyncOperationHelper</members>
+        <members>AsyncSampleImpl</members>
+        <members>AsyncOperationQueueable</members>
+        <members>AsyncOperationRegister</members>
+        <members>AsyncOperationSchedule</members>
+        <members>AsyncOperationSetting</members>
+        <members>AsyncOperationTest</members>
+        <members>AsyncOperationTriggerHandler</members>
+        <members>DeleteAsyncOperationSchedule</members>
+        <members>IAsyncOperation</members>
+        <members>TriggerHandler</members>
+        <members>TriggerHandler_Test</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AsyncOperationTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>AsyncOperationSetting__c</members>
+        <members>AsyncOperation__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>AsyncOperationSetting__c.Active__c</members>
+        <members>AsyncOperationSetting__c.EmailAlert__c</members>
+        <members>AsyncOperationSetting__c.Emails__c</members>
+        <members>AsyncOperationSetting__c.RetriedTimes__c</members>
+        <members>AsyncOperation__c.Method__c</members>
+        <members>AsyncOperation__c.Log__c</members>
+        <members>AsyncOperation__c.JSON__c</members>
+        <members>AsyncOperation__c.Status__c</members>
+        <members>AsyncOperation__c.TriedTimes__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>AsyncOperation__c-Async Operation Layout</members>
+        <name>Layout</name>
+    </types>
+    <version>56.0</version>
+</Package>
