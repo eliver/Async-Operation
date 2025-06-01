@@ -37,6 +37,17 @@ The Async Operation Framework solves the problem of data tracking difficulty dur
 4. Failed jobs are automatically retried based on configured settings
 5. Monitor execution through custom objects
 
+## Architecture Overview
+
+![Architecture Overview](images/architecture-overview.svg)
+
+The Salesforce Async Operation Framework follows a modular design with clear separation of concerns:
+
+- **Client Layer**: Applications interact with the framework through the AsyncOperationHelper
+- **Core Framework**: Manages the creation, execution, and monitoring of asynchronous operations
+- **Custom Implementations**: Implements the IAsyncOperation interface for specific business logic
+- **Configuration & Scheduling**: Controls the behavior of the framework through settings and scheduled jobs
+
 ## Installation
 
 ### Using Salesforce CLI
@@ -201,6 +212,17 @@ Async Operation 解决了异步操作时的数据不易跟踪的问题，完善�
 4. 根据配置设置自动重试失败的作业
 5. 通过自定义对象监控执行情况
 
+## 架构概览
+
+![架构概览](images/architecture-overview.svg)
+
+Salesforce 异步操作框架遵循模块化设计，明确分离关注点：
+
+- **客户端层**：应用程序通过 AsyncOperationHelper 与框架交互
+- **核心框架**：管理异步操作的创建、执行和监控
+- **自定义实现**：为特定业务逻辑实现 IAsyncOperation 接口
+- **配置与调度**：通过设置和调度作业控制框架的行为
+
 ## 安装
 
 ### 使用 Salesforce CLI
@@ -335,10 +357,6 @@ AsyncOperationHelper.execute(String method);
 | Email Alert? | EmailAlert__c | Checkbox | 执行失败时是否发送邮件通知 |
 | Email(s) | Emails__c | Text(255) | 执行失败时发送到的邮件地址 |
 | Retried Time(s)? | RetriedTimes__c | Number(18, 0) | 错误重试的次数 |
-
-## 架构
-
-![Architecture](https://via.placeholder.com/800x400?text=Salesforce+Async+Operation+Framework)
 
 ## 贡献指南
 

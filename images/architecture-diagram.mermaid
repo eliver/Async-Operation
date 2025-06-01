@@ -1,0 +1,41 @@
+graph TD
+    subgraph "Client Code"
+        A[Client Application] --> B[AsyncOperationHelper]
+    end
+    
+    subgraph "Core Framework"
+        B[AsyncOperationHelper] -->|createRecord/createRecords| C[AsyncOperation__c]
+        B -->|addRecord/addRecords| D[Records Collection]
+        D -->|execute| E[AsyncOperationQueueable]
+        C -->|After Insert/Update| F[AsyncOperationTrigger]
+        F --> G[AsyncOperationTriggerHandler]
+        G --> E[AsyncOperationQueueable]
+        E -->|process record| H[AsyncOperationRegister]
+        H -->|lookup implementation| I[IAsyncOperation Implementation]
+        I -->|return result| E
+        E -->|update status| C
+    end
+    
+    subgraph "Custom Implementations"
+        I -->|interface| J[Custom Implementation 1]
+        I -->|interface| K[Custom Implementation 2]
+        I -->|interface| L[Custom Implementation N]
+    end
+    
+    subgraph "Configuration"
+        M[AsyncOperationSetting__c] -->|retries config| E
+        M -->|email notifications| E
+    end
+    
+    subgraph "Scheduled Jobs"
+        N[AsyncOperationSchedule] -->|process pending| E
+        O[DeleteAsyncOperationSchedule] -->|clean old records| C
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style E fill:#fbf,stroke:#333,stroke-width:2px
+    style H fill:#fbb,stroke:#333,stroke-width:2px
+    style I fill:#bff,stroke:#333,stroke-width:2px
+    style M fill:#ff9,stroke:#333,stroke-width:2px 
